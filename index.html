@@ -66,7 +66,7 @@
 			wealth += nuggetsDug*workers;
             document.getElementById("wealthNumber").innerHTML = wealth;
             if(workers > 0)
-			    document.getElementById("newsLetter").innerHTML = "Your worker has dug "+ nuggetsDug +" nuggets!";
+			    document.getElementById("newsLetter").innerHTML = "Your worker has dug "+ nuggetsDug*workers +" nuggets!";
 		}, 15000);
 
     </script>
