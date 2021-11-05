@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gold Miner</title>
+    <style>
+
+        #nuggImage {
+        }
+
+            #nuggImage:hover {
+                filter: grayscale(0%);
+            }
+
+            #nuggImage:out {
+                filter: grayscale(100%);
+            }
+
+            #nuggImage:active {
+                position: relative;
+                animation-name: bounce;
+                animation-duration: 0.5s;
+            }
+
+        @keyframes bounce {
+            0% {
+                top: 0px;
+            }
+
+            50% {
+                top: 10px;
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+		const twitterThing = setInterval(() => {
+			if(wealth > 10)
+				document.getElementById("newsLetter").innerHTML = "You can now buy another wife!";
+		}, 5000);
+		var wealth = 0;
+		const wifeCost = 10;
+		var wives = 0;
+		var children = 0;
+		const buyWife = () => {
+			if(wealth > 10) {
+				wives += 1;
+				wealth -= wifeCost;
+				document.getElementById("wifeCount").innerHTML = wives;
+				document.getElementById("wealthNumber").innerHTML = wealth;
+			}
+		}
+
+		//later, this will be a abstracted function
+		const digNuggets = setInterval(() => {
+			//A wife can dig anywhere between 10-80 nuggs
+			var nuggetsDug = 10 + (Math.floor(Math.random() * 81));
+			wealth += nuggetsDug;
+			document.getElementById("wealthNumber").innerHTML = wealth;
+			document.getElementById("newsLetter").innerHTML = "Your wife has dug "+ nuggetsDug +" nuggets!";
+		}, 15000);
+
+		const tryForChild = setInterval(() => {
+		//	var childChance = 10 + (Math.random() * 81);
+
+		//	if(childChance < 6)
+		//		children += 1;
+		//		document.getElementById("childCount").innerHTML = children;
+		//		document.getElementById("newsLetter").innerHTML = "A child was born";
+		}, 10000);
+    </script>
+    <a href="#" id="nuggImage"><img src="nugget.jpg" alt="nuggetImage" /></a>
+    <h1>Wealth:</h1>
+    <h1 id="wealthNumber">0</h1>
+    <h3>Wives:</h3>
+    <p>A wife will dig some gold nuggets for you every 15 seconds</p>
+    <h3 id="wifeCount">0</h3>
+    <button onClick="buyWife()">Buy wife! (70 nuggets)</button>
+    <h3>Children:</h3>
+    <h3 id="childCount">0</h3>
+    <h4 id="newsLetter">No news</h4>
+
+    <script>
+				//get the image and attach mouse over and mouse out on it
+		const nuggImage = document.getElementById("nuggImage");
+		nuggImage.addEventListener("mouseover", () => {
+			//nuggImage.style.filter = "grayscale(0%)";
+		});
+		nuggImage.addEventListener("mouseout", () => {
+			//nuggImage.style.filter = "grayscale(100%)";
+		});
+		nuggImage.addEventListener("click", () => {
+			wealth += 1;
+			document.getElementById("wealthNumber").innerHTML = wealth;
+
+		});
+    </script>
+</body>
+</html>
