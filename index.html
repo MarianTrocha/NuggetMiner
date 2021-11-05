@@ -50,11 +50,11 @@
 
 		//later, this will be a abstracted function
 		const digNuggets = setInterval(() => {
-			//A wife can dig anywhere between 10-80 nuggs
+			//A worker can dig anywhere between 10-80 nuggs
 			var nuggetsDug = 10 + (Math.floor(Math.random() * 81));
 			wealth += nuggetsDug;
 			document.getElementById("wealthNumber").innerHTML = wealth;
-			document.getElementById("newsLetter").innerHTML = "Your wife has dug "+ nuggetsDug +" nuggets!";
+			document.getElementById("newsLetter").innerHTML = "Your worker has dug "+ nuggetsDug +" nuggets!";
 		}, 15000);
 
     </script>
