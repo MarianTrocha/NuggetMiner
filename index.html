@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <title>Gold Miner</title>
     <style>
-            .centerNugget {
+            .centerNuggetWrapper {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
                 width: 50%;
             }
+        .centerNugget {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 			#nuggImage {
 				filter: grayscale(100%);
 			}
@@ -63,7 +68,7 @@
 		}, 15000);
 
     </script>
-    <a href="#" class="centerNugget" id="nuggImage"><img class="centerNugget" src="nugget.jpg" alt="nuggetImage" /></a>
+    <a href="#" class="centerNuggetWrapper" id="nuggImage"><img class="centerNugget" src="nugget.jpg" alt="nuggetImage" /></a>
     <h1>Wealth:</h1>
     <h1 id="wealthNumber">0</h1>
     <h3>Workers:</h3>
