@@ -51,10 +51,10 @@
 		const workerCost = 70;
 		var workers = 0;
 		const hireWorker = () => {
-			if(wealth > 10) {
+			if(wealth > workerCost) {
 				workers += 1;
-				wealth -= wifeCost;
-                document.getElementById("workerCount").innerHTML = wives;
+				wealth -= workerCost;
+                document.getElementById("workerCount").innerHTML = workers;
 				document.getElementById("wealthNumber").innerHTML = wealth;
 			}
 		}
@@ -63,7 +63,7 @@
 		const digNuggets = setInterval(() => {
 			//A worker can dig anywhere between 10-80 nuggs
 			var nuggetsDug = 10 + (Math.floor(Math.random() * 81));
-			wealth += nuggetsDug;
+			wealth += nuggetsDug*workers;
 			document.getElementById("wealthNumber").innerHTML = wealth;
 			document.getElementById("newsLetter").innerHTML = "Your worker has dug "+ nuggetsDug +" nuggets!";
 		}, 15000);
